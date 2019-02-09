@@ -27,7 +27,6 @@ private:
 	//init
 
 	void initWindow();
-	void initTetris();
 	void initUpdateState();
 
 
