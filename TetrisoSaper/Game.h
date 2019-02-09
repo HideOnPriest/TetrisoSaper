@@ -1,23 +1,7 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "pch.h"
-
-#include <vector>
-#include <iostream>
-#include <ctime>
-#include <cstdlib>
-#include <stack>
-#include <sstream>
-#include <fstream>
-#include <map>
-
-
-#include "SFML/Graphics.hpp"
-#include "SFML/Window.hpp"
-#include "SFML/Audio.hpp"
-#include "SFML/Network.hpp"
-#include "SFML/System.hpp"
+#include "GameState.h"
 
 
 
@@ -25,7 +9,7 @@
 class Game
 {
 public:
-
+	
 	//konstruktory/destruktory
 	Game();
 	virtual ~Game();
@@ -43,11 +27,15 @@ private:
 	//init
 
 	void initWindow();
+	void initTetris();
+	void initUpdateState();
 
 
 
 	//zmienne
 	float dt;
+
+	std::stack<State*> states;
 
 	sf::RenderWindow *window;
 	sf::Event event;
