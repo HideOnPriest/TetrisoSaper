@@ -24,15 +24,16 @@ void GameState::updateKeyBinds(const float& dt)
 	this->checkForQuit();
 }
 
-void GameState::render(sf::RenderTarget* target)
-{
-	
-
-}
-
 void GameState::update(const float& dt)
 {
+	this->updateMousePos();
 	this->updateKeyBinds(dt);
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-		std::cout << "A" << std::endl;
+	this->A.update(dt);
 }
+
+void GameState::render(sf::RenderTarget* target)
+{
+	this->A.render(this->window);
+}
+
+

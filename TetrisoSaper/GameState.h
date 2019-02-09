@@ -15,8 +15,11 @@ public:
 	void endState();
 
 	void updateKeyBinds(const float& dt);
-	void render(sf::RenderTarget* target= nullptr);
+	void render(sf::RenderTarget* target = NULL);
 	void update(const float& dt);
+
+private:
+	Entity A;
 
 };
 #endif

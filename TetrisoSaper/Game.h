@@ -1,7 +1,7 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "GameState.h"
+#include "MainMenuState.h"
 
 
 
@@ -20,6 +20,7 @@ public:
 	void update();
 	void render();
 	void run();
+	void endApplication();
 	
 
 private:

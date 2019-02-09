@@ -8,20 +8,16 @@ void Game::initWindow()
 	
 }
 
-void Game::initTetris()
-{
-	
-}
 
 void Game::initUpdateState()
 {
-	this->states.push(new GameState(this->window));
+	this->states.push(new MainMenuState(this->window));
+	
 }
 
 Game::Game()
 {
 	this->initWindow();
-	this->initTetris();
 	this->initUpdateState();
 }
 
@@ -73,6 +69,7 @@ void Game::update()
 	}
 	else
 	{
+		this->endApplication();
 		this->window->close();
 	}
 }
@@ -98,5 +95,10 @@ void Game::run()
 		this->render();
 	}
 
+}
+
+void Game::endApplication()
+{
+	std::cout << "Ending Application " << std::endl;
 }
 
